@@ -1,5 +1,5 @@
 {
-  "name": "my-webpack-project",
+  "name": "weather app",
   "version": "1.0.0",
   "description": "My webpack project",
   "main": "index.js",
@@ -24,7 +24,7 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.5",
     "postcss": "^8.4.21",
-    "postcss-loader": "^7.0.2",
+    "postcss-loader": "^7.1.0",
     "prettier": "^2.8.4",
     "style-loader": "^3.3.2",
     "webpack": "^5.76.2",
