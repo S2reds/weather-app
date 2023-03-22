@@ -34,7 +34,7 @@ body {
   filter: brightness(75%);
 }
 
-input[type="text"] {
+input[name='location'] {
   background: transparent;
   backdrop-filter: blur(25px);
   font-size: 1.25rem;
