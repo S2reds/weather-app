@@ -29,7 +29,6 @@ formData.addEventListener('submit', e => {
     const response = requestAPI(data.location)
     let gif
     response.then(res => {
-        console.log(res)
         gif = res.weather[0].main
         let bg = requestBg(res.weather[0].description)
         name.textContent = res.name
@@ -43,15 +42,11 @@ formData.addEventListener('submit', e => {
         let minutes = '0' + sunset.getMinutes();
         let seconds = '0' + sunset.getSeconds();
         let time = hours + ":" + minutes.substr(-2) + ':' + seconds.substr(-2);
-        console.log(time)
-        console.log(sunset)
         sunsetter.textContent = time
         bg.then(result => {
-            console.log(result)
             img.src = result.results[0].urls.regular
             let newGif = requestGIF(gif+" weather")
             newGif.then(pic => {
-                console.log(pic)
                 gifDiv.src = pic.data.images.original.url
         })
 
