@@ -16,6 +16,7 @@ const humid = document.querySelector('#humid')
 const wind = document.querySelector('#wind')
 const box2 = document.querySelector('#box2')
 const sunsetter = document.querySelector('#sunset')
+const loading = document.querySelector('#loading')
 
 window.addEventListener('load', e => {
     let bg = requestBg()
@@ -24,6 +25,7 @@ window.addEventListener('load', e => {
 
 formData.addEventListener('submit', e => {
     e.preventDefault()
+    loading.style.display = 'flex'
     if (!input.value) console.log('No location added')
     const data = Object.fromEntries(new FormData(formData).entries())
     const response = requestAPI(data.location)
@@ -49,8 +51,10 @@ formData.addEventListener('submit', e => {
             newGif.then(pic => {
                 gifDiv.src = pic.data.images.original.url
         })
-
         })
+    })
+    .finally(() => {
+        loading.style.display = 'none'
     })
     input.value = ''
     formDiv.classList.add('slide-up')
